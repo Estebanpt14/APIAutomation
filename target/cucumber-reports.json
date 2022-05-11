@@ -1,0 +1,59 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2022-05-11T21:37:32.613Z",
+        "line": 4,
+        "name": "Prueba Get al endpoint.",
+        "description": "",
+        "id": "ejemplo-de-request;prueba-get-al-endpoint.",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2052911200,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I send a GET request to the endpoint",
+            "match": {
+              "location": "Steps.APITestSteps.sendGETRequest()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2654351400,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I get a 200 status",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "Steps.APITestSteps.validateListOfUsers(int)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@API"
+          }
+        ]
+      }
+    ],
+    "name": "Ejemplo de request",
+    "description": "",
+    "id": "ejemplo-de-request",
+    "keyword": "Feature",
+    "uri": "file:src/test/sources/features/APITest.feature",
+    "tags": []
+  }
+]
