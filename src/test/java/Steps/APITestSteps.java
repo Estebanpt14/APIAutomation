@@ -42,4 +42,22 @@ public class APITestSteps {
         List<String> jsonResponse = response.jsonPath().getList("$");
         Assert.assertEquals(expectedSize, jsonResponse.size());
     }
+
+    @Then("^I validate there is a value: (.+) in the response at (.+) endpoint$")
+    public void containsItem(String item, String endPoint){
+        response = requestSpecification
+                .when()
+                .get(endPoint);
+        List<String> jsonResponse = response.jsonPath().getList("username");
+        Assert.assertTrue("El item no se encuentra en la respuesta", jsonResponse.contains(item));
+    }
+
+    @Then("^I validate the nested value: (.+) in the response at (.+) endpoint$")
+    public void containsNestedItem(String item, String endPoint){
+        response = requestSpecification
+                .when()
+                .get(endPoint);
+        String jsonResponse = response.jsonPath().getString("address.street");
+        Assert.assertTrue("El item no se encuentra en la respuesta", jsonResponse.contains(item));
+    }
 }

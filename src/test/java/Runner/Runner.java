@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
     glue = "Steps",
     plugin = {"html:target/cucumber-html-report.html"},
     /*plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},*/
-    tags = "@USERS"
+    tags = "@ANI"
 )
 
 
