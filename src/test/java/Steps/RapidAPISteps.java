@@ -27,6 +27,7 @@ public class RapidAPISteps {
     @Given("^I have a valid API key for the (.+) URI$")
     public void APIKey(String URI){
         requestSpecification = given()
+                .relaxedHTTPSValidation()
                 .header("X-RapidAPI-Host","bravenewcoin.p.rapidapi.com")
                 .header("X-RapidAPI-Key", "89f67d1c99msh67a6f772cc246a6p107ba0jsn94b856abd0c0")
                 .baseUri(URI).contentType(ContentType.JSON)
