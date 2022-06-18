@@ -30,8 +30,22 @@ dependencies{
     testImplementation ('org.junit.jupiter:junit-jupiter:5.6.0')
     // https://mvnrepository.com/artifact/org.testng/testng
     testImplementation group: 'org.testng', name: 'testng', version: '7.6.0'
+    // https://mvnrepository.com/artifact/io.rest-assured/json-schema-validator
+    testImplementation 'io.rest-assured:json-schema-validator:3.0.3'
+
 }
 
 tasks.test {
     useJUnitPlatform()
+}
+
+test{
+    useTestNG(){
+        testLogging.showStandardStreams = true
+        useDefaultListeners = true
+        reports.html.enabled =false
+        parallel = "tests"
+        includeGroups 'smoke'
+        exclude 'regresion'
+    }
 }
